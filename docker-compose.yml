@@ -9,14 +9,12 @@ services:
     stdin_open: true
     tty: true
     volumes:
-      - ./make-embededing:/app/data
+      - ./make-embededing:/app
     image: soulteary/image-search-engine:20231114
     command: tail -f /etc/hosts
     container_name: embededing-server
 
   redis-server:
-    ports:
-      - 6379:6379
     image: redis/redis-stack-server:7.2.0-v6
     volumes:
       - ./redis-data:/data

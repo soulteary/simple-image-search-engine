@@ -12,7 +12,7 @@ processor = CLIPProcessor.from_pretrained(model_name_or_local_path)
 
 vector_indexes_name = "idx:ball_indexes"
 
-client = redis.Redis(host="10.11.12.178", port=6379, decode_responses=True)
+client = redis.Redis(host="redis-server", port=6379, decode_responses=True)
 res = client.ping()
 print("redis connected:", res)
 
