@@ -1,7 +1,7 @@
 version: "2.4"
 
 services:
-  embededing-server:
+  embeddings-server:
     ipc: host
     ulimits:
       memlock: -1
@@ -9,10 +9,10 @@ services:
     stdin_open: true
     tty: true
     volumes:
-      - ./make-embededing:/app
+      - ./make-embeddings:/app
     image: soulteary/image-search-engine:20231114
     command: tail -f /etc/hosts
-    container_name: embededing-server
+    container_name: embeddings-server
 
   redis-server:
     image: redis/redis-stack-server:7.2.0-v6
