@@ -5,7 +5,7 @@ client = redis.Redis(host="redis-server", port=6379, decode_responses=True)
 res = client.ping()
 print("redis connected:", res)
 
-vector_indexes_name = "idx:ball_vss"
+vector_indexes_name = "idx:ball_indexes"
 
 # 从 Redis 数据库中读取索引状态
 info = client.ft(vector_indexes_name).info()
